@@ -8,106 +8,7 @@ namespace ConsoleApp5
 {
     internal class Program
     {
-        class Employee
-        {
-            private string fullName;
-            private DateTime dateOfBirth;
-            private string phoneNumber;
-            private string email;
-            private string position;
-            private string jobDescription;
-            private decimal salary;
-
-            public string FullName { get; set; }
-            public DateTime DateOfBirth { get; set; }
-            public string PhoneNumber { get; set; }
-            public string Email { get; set; }
-            public string Position { get; set; }
-            public string JobDescription { get; set; }
-            public decimal Salary { get; set; } 
-
-            public Employee()
-            {
-            }
-
-            public Employee(string fullName, DateTime dateOfBirth, string phoneNumber, string email, string position, string jobDescription, decimal salary)
-            {
-                FullName = fullName;
-                DateOfBirth = dateOfBirth;
-                PhoneNumber = phoneNumber;
-                Email = email;
-                Position = position;
-                JobDescription = jobDescription;
-                Salary = salary;
-            }
-
-            public void InputData()
-            {
-                Console.WriteLine("Enter full name:");
-                fullName = Console.ReadLine();
-
-                Console.WriteLine("Enter date of birth (YYYY-MM-DD):");
-                dateOfBirth = DateTime.Parse(Console.ReadLine());
-
-                Console.WriteLine("Enter phone number:");
-                phoneNumber = Console.ReadLine();
-
-                Console.WriteLine("Enter email:");
-                email = Console.ReadLine();
-
-                Console.WriteLine("Enter position:");
-                position = Console.ReadLine();
-
-                Console.WriteLine("Enter job description:");
-                jobDescription = Console.ReadLine();
-
-                Console.WriteLine("Enter salary:");
-                Salary = decimal.Parse(Console.ReadLine());
-            }
-
-            public void DisplayData()
-            {
-                Console.WriteLine($"Full Name: {FullName}");
-                Console.WriteLine($"Date of Birth: {DateOfBirth:yyyy-MM-dd}");
-                Console.WriteLine($"Phone Number: {PhoneNumber}");
-                Console.WriteLine($"Email: {Email}");
-                Console.WriteLine($"Position: {Position}");
-                Console.WriteLine($"Job Description: {JobDescription}");
-                Console.WriteLine($"Salary: {Salary}");
-            }
-
-            public static Employee operator +(Employee emp, decimal amount)
-            {
-                emp.Salary += amount;
-                return emp;
-            }
-
-            public static Employee operator -(Employee emp, decimal amount)
-            {
-                emp.Salary -= amount;
-                return emp;
-            }
-
-            public static bool operator ==(Employee emp1, Employee emp2)
-            {
-                return emp1.Salary == emp2.Salary;
-            }
-
-            public static bool operator !=(Employee emp1, Employee emp2)
-            {
-                return !(emp1 == emp2);
-            }
-
-            public static bool operator <(Employee emp1, Employee emp2)
-            {
-                return emp1.Salary < emp2.Salary;
-            }
-
-            public static bool operator >(Employee emp1, Employee emp2)
-            {
-                return emp1.Salary > emp2.Salary;
-            }
-        }
+        
 
         class Matrix
         {
@@ -490,146 +391,221 @@ namespace ConsoleApp5
 
         static void Main(string[] args)
         {
-            //1
-            Employee emp1 = new Employee("Olia Yassuf", new DateTime(2005, 04, 16), "+49-175-28-70-153", "yassufo@gmail.com", "Manager", "Managing the team", 5000);
-            Employee emp2 = new Employee("Darion Jobs", new DateTime(2000, 12, 16), "+49-175-28-70-154", "jobsd@gmail.com", "Supervisor", "Supervising the department", 4500);
+            ////1
+            //Employee emp1 = new Employee("Olia Yassuf", new DateTime(2005, 04, 16), "+49-175-28-70-153", "yassufo@gmail.com", "Manager", "Managing the team", 5000);
+            //Employee emp2 = new Employee("Darion Jobs", new DateTime(2000, 12, 16), "+49-175-28-70-154", "jobsd@gmail.com", "Supervisor", "Supervising the department", 4500);
 
-            Console.WriteLine("Initial data:");
-            emp1.DisplayData();
+            //Console.WriteLine("Initial data:");
+            //emp1.DisplayData();
+            //Console.WriteLine();
+            //emp2.DisplayData();
+            //Console.WriteLine();
+
+            //emp1 += 500;
+            //Console.WriteLine("Employee 1 salary increased by $500:");
+            //emp1.DisplayData();
+            //Console.WriteLine();
+
+            //emp2 -= 1000;
+            //Console.WriteLine("Employee 2 salary decreased by $1000:");
+            //emp2.DisplayData();
+            //Console.WriteLine();
+
+            //Console.WriteLine($"Are the salaries of Employee 1 and Employee 2 equal? {emp1 == emp2}");
+            //Console.WriteLine();
+
+            //Console.WriteLine($"Are the salaries of Employee 1 and Employee 2 not equal? {emp1 != emp2}");
+            //Console.WriteLine();
+
+            //Console.WriteLine($"Is the salary of Employee 1 less than the salary of Employee 2? {emp1 < emp2}");
+            //Console.WriteLine();
+
+            //Console.WriteLine($"Is the salary of Employee 1 greater than the salary of Employee 2? {emp1 > emp2}");
+            //Console.WriteLine();
+
+            ////2
+            //Matrix matrix1 = new Matrix(2, 2);
+            //Matrix matrix2 = new Matrix(2, 2);
+
+            //Console.WriteLine("Enter data for matrix 1:");
+            //matrix1.InputData();
+
+            //Console.WriteLine("\nEnter data for matrix 2:");
+            //matrix2.InputData();
+
+            //Console.WriteLine("\nMatrix 1:");
+            //matrix1.DisplayData();
+
+            //Console.WriteLine("\nMatrix 2:");
+            //matrix2.DisplayData();
+
+            //Console.WriteLine("\nTesting operators:");
+
+            //Matrix sum = matrix1 + matrix2;
+            //Console.WriteLine("\nMatrix1 + Matrix2:");
+            //sum.DisplayData();
+
+            //Matrix diff = matrix1 - matrix2;
+            //Console.WriteLine("\nMatrix1 - Matrix2:");
+            //diff.DisplayData();
+
+            //int scalar = 2;
+            //Matrix productScalar = matrix1 * scalar;
+            //Console.WriteLine($"\nMatrix1 * {scalar}:");
+            //productScalar.DisplayData();
+
+            //Matrix productMatrix = matrix1 * matrix2;
+            //Console.WriteLine("\nMatrix1 * Matrix2:");
+            //productMatrix.DisplayData();
+
+            //Console.WriteLine("\nMatrix1 == Matrix2: " + (matrix1 == matrix2));
+
+            //Console.WriteLine("Matrix1 != Matrix2: " + (matrix1 != matrix2));
+
+            ////3
+            //City city1 = new City("Braunschweig", "Germany", 250000, "+49", new string[] { "Innenstadt", "Heidberg-Melverode", "Stöckheim-Leiferde" });
+            //City city2 = new City("Hannover", "Germany", 540000, "+49", new string[] { "Mitte", "Vahrenwald-List", "Bothfeld-Vahrenheide" });
+
+            //Console.WriteLine("City 1:");
+            //city1.DisplayData();
+            //Console.WriteLine();
+
+            //Console.WriteLine("City 2:");
+            //city2.DisplayData();
+            //Console.WriteLine();
+
+            //Console.WriteLine("Testing operators:");
+
+            //City city1AfterIncrease = city1 + 20000;
+            //Console.WriteLine("\nCity 1 after population increase:");
+            //city1AfterIncrease.DisplayData();
+            //Console.WriteLine();
+
+            //City city2AfterDecrease = city2 - 20000;
+            //Console.WriteLine("\nCity 2 after population decrease:");
+            //city2AfterDecrease.DisplayData();
+            //Console.WriteLine();
+
+            //Console.WriteLine("City 1 population equals City 2 population: " + (city1 == city2));
+            //Console.WriteLine();
+
+            //Console.WriteLine("City 1 population does not equal City 2 population: " + (city1 != city2));
+            //Console.WriteLine();
+
+            //Console.WriteLine("City 1 has greater population than City 2: " + (city1 > city2));
+            //Console.WriteLine();
+
+            //Console.WriteLine("City 1 has smaller population than City 2: " + (city1 < city2));
+
+            ////4
+            //CreditCard card1 = new CreditCard("1234567890123456", "Olia Yassuf", 123, new DateTime(2025, 12, 31), 500);
+            //CreditCard card2 = new CreditCard("9876543210987654", "Darion Jobs", 456, new DateTime(2024, 10, 31), 1000);
+
+            //Console.WriteLine("Card 1:");
+            //card1.DisplayData();
+            //Console.WriteLine();
+
+            //Console.WriteLine("Card 2:");
+            //card2.DisplayData();
+            //Console.WriteLine();
+
+            //Console.WriteLine("Testing operators:");
+
+            //CreditCard card1AfterIncrease = card1 + 300;
+            //Console.WriteLine("\nCard 1 after increasing balance:");
+            //card1AfterIncrease.DisplayData();
+            //Console.WriteLine();
+
+            //CreditCard card2AfterDecrease = card2 - 600;
+            //Console.WriteLine("\nCard 2 after decreasing balance:");
+            //card2AfterDecrease.DisplayData();
+            //Console.WriteLine();
+
+            //Console.WriteLine("Card 1 CVC equals Card 2 CVC: " + (card1 == card2));
+            //Console.WriteLine();
+
+            //Console.WriteLine("Card 1 CVC does not equal Card 2 CVC: " + (card1 != card2));
+            //Console.WriteLine();
+
+            //Console.WriteLine("Card 1 has greater balance than Card 2: " + (card1 > card2));
+            //Console.WriteLine();
+
+            //Console.WriteLine("Card 1 has smaller balance than Card 2: " + (card1 < card2));
+
+            //HW
+            Console.WriteLine("||||||||||||||||||||||||||||||1|||||||||||||||||||||||||||||||");
+            Employee chiefEditor = new Employee("Darion Jobs", new DateTime(2000, 12, 16), "+49-175-28-70-154", "jobsd@gmail.com", "Supervisor", "Supervising the department", 4500);
+
+            Journal journal = new Journal("Journal A", 2000, "Description A", "123456789", "journal@example.com", chiefEditor, 3);
+
+            //Employee emp1 = new Employee("Olia Yassuf", new DateTime(2005, 04, 16), "+49-175-28-70-153", "yassufo@gmail.com", "Manager", "Managing the team", 5000);
+            //Employee emp2 = new Employee("Darion Jobs", new DateTime(2000, 12, 16), "+49-175-28-70-154", "jobsd@gmail.com", "Supervisor", "Supervising the department", 4500);
+
+            journal.EmployeeCount += 2;
+
+            Console.WriteLine("Journal Information:");
+            journal.DisplayData();
+
+            Console.WriteLine("||||||||||||||||||||||||||||||2|||||||||||||||||||||||||||||||");
+
+            Shop shop1 = new Shop("Shop 1", "Address 1", "Description 1", "123456789", "shop1@gmail.com", 100);
+            Shop shop2 = new Shop("Shop 2", "Address 2", "Description 2", "987654321", "shop2@gmail.com", 200);
+
+            Console.WriteLine("Shop 1 Information:");
+            shop1.DisplayData();
             Console.WriteLine();
-            emp2.DisplayData();
+
+            Console.WriteLine("Shop 2 Information:");
+            shop2.DisplayData();
             Console.WriteLine();
 
-            emp1 += 500;
-            Console.WriteLine("Employee 1 salary increased by $500:");
-            emp1.DisplayData();
+            shop1 += 50;
+
+            shop2 -= 30;
+
+            Console.WriteLine("Updated Shop 1 Information:");
+            shop1.DisplayData();
             Console.WriteLine();
 
-            emp2 -= 1000;
-            Console.WriteLine("Employee 2 salary decreased by $1000:");
-            emp2.DisplayData();
+            Console.WriteLine("Updated Shop 2 Information:");
+            shop2.DisplayData();
             Console.WriteLine();
 
-            Console.WriteLine($"Are the salaries of Employee 1 and Employee 2 equal? {emp1 == emp2}");
-            Console.WriteLine();
+            Console.WriteLine($"Are shop1 and shop2 areas equal? {shop1 == shop2}");
 
-            Console.WriteLine($"Are the salaries of Employee 1 and Employee 2 not equal? {emp1 != emp2}");
-            Console.WriteLine();
+            Console.WriteLine($"Is shop1 area greater than shop2 area? {shop1 > shop2}");
 
-            Console.WriteLine($"Is the salary of Employee 1 less than the salary of Employee 2? {emp1 < emp2}");
-            Console.WriteLine();
+            Console.WriteLine($"Is shop1 area less than shop2 area? {shop1 < shop2}");
 
-            Console.WriteLine($"Is the salary of Employee 1 greater than the salary of Employee 2? {emp1 > emp2}");
-            Console.WriteLine();
+            Console.WriteLine("||||||||||||||||||||||||||||||3|||||||||||||||||||||||||||||||");
 
-            //2
-            Matrix matrix1 = new Matrix(2, 2);
-            Matrix matrix2 = new Matrix(2, 2);
+            ReadingList readingList = new ReadingList(5);
 
-            Console.WriteLine("Enter data for matrix 1:");
-            matrix1.InputData();
+            Book book1 = new Book("Title 1", "Author 1", 2020);
+            Book book2 = new Book("Title 2", "Author 2", 2015);
+            Book book3 = new Book("Title 3", "Author 3", 2010);
 
-            Console.WriteLine("\nEnter data for matrix 2:");
-            matrix2.InputData();
+            readingList.AddBook(book1);
+            readingList.AddBook(book2);
+            readingList.AddBook(book3);
 
-            Console.WriteLine("\nMatrix 1:");
-            matrix1.DisplayData();
+            Console.WriteLine("Initial reading list:");
+            Console.WriteLine(readingList);
 
-            Console.WriteLine("\nMatrix 2:");
-            matrix2.DisplayData();
+            readingList.RemoveBook(book2);
 
-            Console.WriteLine("\nTesting operators:");
+            Console.WriteLine("\nReading list after removing a book:");
+            Console.WriteLine(readingList);
 
-            Matrix sum = matrix1 + matrix2;
-            Console.WriteLine("\nMatrix1 + Matrix2:");
-            sum.DisplayData();
+            Console.WriteLine($"Is 'Title 1' in the reading list? {readingList.ContainsBook(book1)}");
+            Console.WriteLine($"Is 'Title 2' in the reading list? {readingList.ContainsBook(book2)}");
+            Console.WriteLine($"Is 'Title 3' in the reading list? {readingList.ContainsBook(book3)}");
 
-            Matrix diff = matrix1 - matrix2;
-            Console.WriteLine("\nMatrix1 - Matrix2:");
-            diff.DisplayData();
-
-            int scalar = 2;
-            Matrix productScalar = matrix1 * scalar;
-            Console.WriteLine($"\nMatrix1 * {scalar}:");
-            productScalar.DisplayData();
-
-            Matrix productMatrix = matrix1 * matrix2;
-            Console.WriteLine("\nMatrix1 * Matrix2:");
-            productMatrix.DisplayData();
-
-            Console.WriteLine("\nMatrix1 == Matrix2: " + (matrix1 == matrix2));
-
-            Console.WriteLine("Matrix1 != Matrix2: " + (matrix1 != matrix2));
-
-            //3
-            City city1 = new City("Braunschweig", "Germany", 250000, "+49", new string[] { "Innenstadt", "Heidberg-Melverode", "Stöckheim-Leiferde" });
-            City city2 = new City("Hannover", "Germany", 540000, "+49", new string[] { "Mitte", "Vahrenwald-List", "Bothfeld-Vahrenheide" });
-
-            Console.WriteLine("City 1:");
-            city1.DisplayData();
-            Console.WriteLine();
-
-            Console.WriteLine("City 2:");
-            city2.DisplayData();
-            Console.WriteLine();
-
-            Console.WriteLine("Testing operators:");
-
-            City city1AfterIncrease = city1 + 20000;
-            Console.WriteLine("\nCity 1 after population increase:");
-            city1AfterIncrease.DisplayData();
-            Console.WriteLine();
-
-            City city2AfterDecrease = city2 - 20000;
-            Console.WriteLine("\nCity 2 after population decrease:");
-            city2AfterDecrease.DisplayData();
-            Console.WriteLine();
-
-            Console.WriteLine("City 1 population equals City 2 population: " + (city1 == city2));
-            Console.WriteLine();
-
-            Console.WriteLine("City 1 population does not equal City 2 population: " + (city1 != city2));
-            Console.WriteLine();
-
-            Console.WriteLine("City 1 has greater population than City 2: " + (city1 > city2));
-            Console.WriteLine();
-
-            Console.WriteLine("City 1 has smaller population than City 2: " + (city1 < city2));
-
-            //4
-            CreditCard card1 = new CreditCard("1234567890123456", "Olia Yassuf", 123, new DateTime(2025, 12, 31), 500);
-            CreditCard card2 = new CreditCard("9876543210987654", "Darion Jobs", 456, new DateTime(2024, 10, 31), 1000);
-
-            Console.WriteLine("Card 1:");
-            card1.DisplayData();
-            Console.WriteLine();
-
-            Console.WriteLine("Card 2:");
-            card2.DisplayData();
-            Console.WriteLine();
-
-            Console.WriteLine("Testing operators:");
-
-            CreditCard card1AfterIncrease = card1 + 300;
-            Console.WriteLine("\nCard 1 after increasing balance:");
-            card1AfterIncrease.DisplayData();
-            Console.WriteLine();
-
-            CreditCard card2AfterDecrease = card2 - 600;
-            Console.WriteLine("\nCard 2 after decreasing balance:");
-            card2AfterDecrease.DisplayData();
-            Console.WriteLine();
-
-            Console.WriteLine("Card 1 CVC equals Card 2 CVC: " + (card1 == card2));
-            Console.WriteLine();
-
-            Console.WriteLine("Card 1 CVC does not equal Card 2 CVC: " + (card1 != card2));
-            Console.WriteLine();
-
-            Console.WriteLine("Card 1 has greater balance than Card 2: " + (card1 > card2));
-            Console.WriteLine();
-
-            Console.WriteLine("Card 1 has smaller balance than Card 2: " + (card1 < card2));
+            Console.WriteLine("\nBooks in the reading list by index:");
+            for (int i = 0; i < readingList.Count; i++)
+            {
+                Console.WriteLine($"Book {i + 1}: {readingList[i]}");
+            }
         }
     }
 }
